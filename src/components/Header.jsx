@@ -1,6 +1,10 @@
 function Header() {
   const title = "Pictures Gallery";
-  return <h1> {title}</h1>;
+  return (
+    <header>
+      <h1>{title}</h1>
+    </header>
+  );
 }
 
 export default Header;

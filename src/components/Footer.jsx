@@ -1,12 +1,12 @@
 function Footer() {
   const copyright = "Create by Paw and Ben ® ";
   // TODO change it use new Date
-  let year = 2023;
+  let year = new Date().getFullYear();
 
   return (
-    <p>
+    <footer>
       {copyright} {year}
-    </p>
+    </footer>
   );
 }
 
