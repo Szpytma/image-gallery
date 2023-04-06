@@ -1,6 +1,8 @@
 import Img1 from "../assets/1.avif";
 import Image from "./Image";
 import { useState } from "react";
+import "./Display.css";
+
 const cats = [
   { status_code: 100, title: "", url: "https://http.cat/100" },
   { status_code: 101, title: "", url: "https://http.cat/101" },

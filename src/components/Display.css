@@ -1,0 +1,23 @@
+body {
+  text-align: center;
+  background: url(https://static.vecteezy.com/system/resources/previews/002/092/090/large_2x/black-animal-paw-pattern-free-vector.jpg);
+}
+
+header {
+  background-color: #002b5b;
+  color: white;
+}
+
+img {
+  width: 75%;
+  height: 75%;
+  margin-bottom: 10%;
+}
+
+button {
+  margin: 10px;
+}
+
+footer {
+  background-color: #ea5455;
+}
