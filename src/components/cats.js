@@ -1,7 +1,4 @@
-import Img1 from "../assets/1.avif";
-import Image from "./Image";
-import { useState } from "react";
-const cats = [
+const httpCats = [
   { status_code: 100, title: "", url: "https://http.cat/100" },
   { status_code: 101, title: "", url: "https://http.cat/101" },
   { status_code: 102, title: "", url: "https://http.cat/102" },
@@ -75,77 +72,3 @@ const cats = [
   { status_code: 525, title: "", url: "https://http.cat/525" },
   { status_code: 599, title: "", url: "https://http.cat/599" },
 ];
-const dataImages = [
-  {
-    id: 1,
-    url: "https://images.unsplash.com/photo-1680630679439-4832b7a40374?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80",
-    src: { Img1 },
-  },
-  {
-    id: 2,
-    url: "https://images.unsplash.com/photo-1486591038957-19e7c73bdc41?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    src: `${__dirname}/public/2.avif`,
-  },
-  {
-    id: 3,
-    url: "https://images.unsplash.com/photo-1576097449798-7c7f90e1248a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-    src: `${__dirname}/public/1.avif`,
-  },
-];
-const dataUsed = cats;
-
-const lastElement = dataUsed.length - 1;
-
-function Display() {
-  const [index, setIndex] = useState(0);
-  const [url, setUrl] = useState(dataUsed[0].url);
-  return (
-    <div>
-      <button
-        type="button"
-        className="btn btn-warning"
-        onClick={(event) => {
-          if (index === 0) {
-            setIndex(lastElement);
-            setUrl(dataUsed[lastElement].url);
-          } else {
-            setIndex((currentIndex) => currentIndex - 1);
-            setUrl(dataUsed[index - 1].url);
-          }
-        }}
-      >
-        Previous
-      </button>
-      <button
-        type="button"
-        className="btn btn-danger"
-        onClick={(event) => {
-          const random = Math.floor(Math.random() * dataUsed.length) + 1;
-          setUrl(() => dataUsed[random - 1].url);
-          setIndex(() => random - 1);
-        }}
-      >
-        Random
-      </button>
-      <button
-        type="button"
-        className="btn btn-warning"
-        onClick={(event) => {
-          if (index === lastElement) {
-            setIndex(0);
-            setUrl(dataUsed[0].url);
-          } else {
-            setIndex((currentIndex) => currentIndex + 1);
-            setUrl(dataUsed[index + 1].url);
-          }
-        }}
-      >
-        Next
-      </button>
-      <br></br>
-      <Image imageUrl={url} />
-    </div>
-  );
-}
-
-export default Display;
